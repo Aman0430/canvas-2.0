@@ -15,7 +15,11 @@ function WorkspaceList() {
     <div className="my-10 p-10 md:px-24 lg:px-36 xl:px-52">
       <div className="flex justify-between">
         <h2 className="text-semibold text-2xl">Hello, {user?.fullName}</h2>
-        <Button>+</Button>
+        <Link href={"/createworkspace"}>
+          <Button>
+            <Plus />
+          </Button>
+        </Link>
       </div>
       <div className="mt-10 flex justify-between">
         <div>
