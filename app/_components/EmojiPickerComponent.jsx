@@ -2,8 +2,11 @@
 
 import EmojiPicker from "emoji-picker-react";
 import React, { useState } from "react";
+import { useTheme } from "next-themes";
 
 function EmojiPickerComponent({ children, setEmojiIcon }) {
+  const theme = useTheme();
+
   const [openEmojiPicker, setOpenEmojiPicker] = useState(false);
   return (
     <div>
@@ -16,6 +19,7 @@ function EmojiPickerComponent({ children, setEmojiIcon }) {
               setEmojiIcon(e.emoji);
               setOpenEmojiPicker(false);
             }}
+            theme={theme.resolvedTheme}
           />
         </div>
       )}
