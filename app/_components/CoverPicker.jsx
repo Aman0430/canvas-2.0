@@ -10,10 +10,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 import Image from "next/image";
 import CoverOptions from "../_shared/CoverOptions";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 
 function CoverPicker({ children, setNewCover }) {
   const [selectedCover, setSelectedCover] = useState("");

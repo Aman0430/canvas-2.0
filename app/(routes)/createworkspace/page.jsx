@@ -1,10 +1,10 @@
 "use client";
 
-import CoverPicker from "@/app/_components/CoverPicker";
-import EmojiPickerComponent from "@/app/_components/EmojiPickerComponent";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { db } from "@/config/firebaseConfig";
+import CoverPicker from "../../_components/CoverPicker";
+import EmojiPickerComponent from "../../_components/EmojiPickerComponent";
+import { Button } from "../../../components/ui/button";
+import { Input } from "../../../components/ui/input";
+import { db } from "../../../config/firebaseConfig";
 import { useAuth, useUser } from "@clerk/nextjs";
 import { setDoc, doc } from "firebase/firestore";
 import { Loader2, SmilePlus, SquarePen } from "lucide-react";

@@ -2,8 +2,7 @@
 import { OrganizationSwitcher, UserButton, useAuth } from "@clerk/nextjs";
 import Logo from "./Logo";
 import React from "react";
-import { ThemeSwitcherBtn } from "@/components/ui/ThemeSwitcherBtn";
-import { Button } from "@/components/ui/button";
+import { ThemeSwitcherBtn } from "../../components/ui/ThemeSwitcherBtn";
 
 function Header() {
   const { orgId } = useAuth();
