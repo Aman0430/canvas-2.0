@@ -67,7 +67,7 @@ function CreateWorkspace() {
               Change Cover
               <SquarePen />
             </h2>
-            <div className="group-hover:opacity-40 transition">
+            <div className="group-hover:opacity-60 transition">
               <Image
                 src={coverImage}
                 width={400}

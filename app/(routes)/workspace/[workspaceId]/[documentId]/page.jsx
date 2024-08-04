@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import SideNav from "../../_components/SideNav";
+import DocumentEditorSection from "../../_components/DocumentEditorSection";
 
 function WorkspaceDocument({ params }) {
   return (
@@ -12,7 +13,9 @@ function WorkspaceDocument({ params }) {
       </div>
 
       {/* Document */}
-      <div className="md:ml-72">Document</div>
+      <div className="md:ml-72">
+        <DocumentEditorSection params={params} />
+      </div>
     </div>
   );
 }
