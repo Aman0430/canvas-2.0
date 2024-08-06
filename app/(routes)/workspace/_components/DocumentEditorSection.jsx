@@ -1,6 +1,7 @@
 import React from "react";
 import DocumentHeader from "./DocumentHeader";
 import DocumentInfo from "./DocumentInfo";
+import DocEditorJS from "./DocEditorJS";
 
 function DocumentEditorSection({ params }) {
   return (
@@ -12,6 +13,7 @@ function DocumentEditorSection({ params }) {
       <DocumentInfo params={params} />
 
       {/* Text Editor */}
+      <DocEditorJS params={params} />
     </div>
   );
 }

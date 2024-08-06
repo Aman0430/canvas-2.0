@@ -23,7 +23,7 @@ function DocumentInfo({ params }) {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      console.log(docSnap.data());
+      // console.log(docSnap.data());
       setDocumentInfo(docSnap.data());
       setEmoji(docSnap.data()?.emoji);
       docSnap.data()?.coverImage && setCoverImage(docSnap.data().coverImage);
@@ -92,7 +92,7 @@ function DocumentInfo({ params }) {
           type="text"
           placeholder="Untitled Document"
           defaultValue={documentInfo?.documentName}
-          className="text-4xl outline-none h-14 font-semibold"
+          className="text-4xl outline-none h-14 dark:bg-black font-semibold"
           onBlur={(e) => updateDocumentInfo("documentName", e.target.value)}
         />
       </div>

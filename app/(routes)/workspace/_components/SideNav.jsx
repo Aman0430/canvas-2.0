@@ -43,7 +43,7 @@ function SideNav({ params }) {
 
       querySnapshot.forEach((doc) => {
         setDocumentList((documentList) => [...documentList, doc.data()]);
-        console.log(doc.data());
+        // console.log(doc.data());
       });
     });
   };
