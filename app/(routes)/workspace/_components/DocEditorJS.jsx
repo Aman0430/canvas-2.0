@@ -119,8 +119,11 @@ function RichDocumentEditor({ params }) {
     }
   };
   return (
-    <div className="flex items-center justify-center">
-      <div id="editorjs" className="w-[70%] bg-rose-300 "></div>
+    <div className="flex items-center ml-8">
+      <div
+        id="editorjs"
+        className="w-[70%] bg-rose-50 dark:bg-secondary "
+      ></div>
       {/* <div className='fixed bottom-10 md:ml-80 left-0 z-10'>
         <GenerateAITemplate setGenerateAIOutput={(output)=>editor?.render(output)} />
       </div> */}
