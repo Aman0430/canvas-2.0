@@ -4,6 +4,9 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "../components/ui/sonner";
 import "@liveblocks/react-ui/styles.css";
+// import "@liveblocks/react-ui/styles/dark/media-query.css";
+// Dark mode using `className="dark"`, `data-theme="dark"`, or `data-dark="true"`
+import "@liveblocks/react-ui/styles/dark/attributes.css";
 
 const outfit = Outfit({ subsets: ["latin"] });
 

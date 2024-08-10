@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import NotificationBox from "./NotificationBox";
 import { ThemeSwitcherBtn } from "../../../../components/ui/ThemeSwitcherBtn";
 import { Button } from "../../../../components/ui/button";
 import { Progress } from "../../../../components/ui/progress";
@@ -88,7 +89,9 @@ function SideNav({ params }) {
         <Logo />
         <div className="flex items-center gap-2">
           <ThemeSwitcherBtn />
-          <Bell className="h-5 w-5" />
+          <NotificationBox>
+            <Bell className="h-5 w-5" />
+          </NotificationBox>
         </div>
       </div>
       <hr className="my-3 mx-3 dark:border-white/30"></hr>

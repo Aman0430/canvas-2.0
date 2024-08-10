@@ -21,6 +21,13 @@ h6.ce-header{
   @apply text-base font-semibold
 }
 
+.lb-root {
+  --lb-accent: purple;
+  --lb-spacing: 1em;
+  --lb-radius: 0;
+  --lb-z-index:10
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

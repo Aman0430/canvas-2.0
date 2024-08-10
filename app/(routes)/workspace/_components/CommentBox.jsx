@@ -10,7 +10,7 @@ function CommentBox() {
     <div className="w-[300px] h-[350px] shadow-lg rounded-lg overflow-auto z-30">
       <div
         className={cn(
-          `bg-white rounded-lg mb-2`,
+          `rounded-lg mb-2`,
           threads?.length > 0 ? "p-[0.2rem]" : ""
         )}
       >
@@ -18,7 +18,7 @@ function CommentBox() {
           <Thread
             key={thread.id}
             thread={thread}
-            className="rounded-lg transition"
+            className="rounded-lg transition lb.root"
           />
         ))}
       </div>

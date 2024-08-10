@@ -12,7 +12,7 @@ import { db } from "../config/firebaseConfig";
 export function Room({ children, params }) {
   return (
     <LiveblocksProvider
-      authEndpoint="/api/liveblocks-auth"
+      authEndpoint={"/api/liveblocks-auth?roomId=" + params?.documentId}
       resolveUsers={async ({ userIds }) => {
         const q = query(
           collection(db, "CanvasUsers"),
@@ -21,7 +21,7 @@ export function Room({ children, params }) {
         const userList = [];
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
-          console.log(doc.data());
+          // console.log(doc.data());
           userList.push(doc.data());
         });
 

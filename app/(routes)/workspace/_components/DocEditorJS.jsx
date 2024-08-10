@@ -1,20 +1,21 @@
-"use client";
-
 import React, { useEffect, useRef, useState } from "react";
 import EditorJS from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import Delimiter from "@editorjs/delimiter";
 import Alert from "editorjs-alert";
 import List from "@editorjs/list";
+import NestedList from "@editorjs/nested-list";
 import Checklist from "@editorjs/checklist";
+import Embed from "@editorjs/embed";
 import SimpleImage from "simple-image-editorjs";
 import Table from "@editorjs/table";
 import CodeTool from "@editorjs/code";
+import { TextVariantTune } from "@editorjs/text-variant-tune";
 import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 import { db } from "../../../../config/firebaseConfig";
 import { useUser } from "@clerk/nextjs";
 import Paragraph from "@editorjs/paragraph";
-// import GenerateAITemplate from './GenerateAITemplate';
+// import GenerateAITemplate from "./GenerateAITemplate";
 
 function RichDocumentEditor({ params }) {
   const ref = useRef();
@@ -36,7 +37,7 @@ function RichDocumentEditor({ params }) {
       const docRef = doc(db, "documentOutput", params?.documentId);
 
       await updateDoc(docRef, {
-        output: outputData,
+        output: JSON.stringify(outputData),
         editedBy: user?.primaryEmailAddress?.emailAddress,
       });
     });
@@ -50,7 +51,7 @@ function RichDocumentEditor({ params }) {
           doc.data()?.editedBy != user?.primaryEmailAddress?.emailAddress ||
           isFetched == false
         )
-          doc.data().editedBy && editor?.render(doc.data()?.output);
+          doc.data().editedBy && editor?.render(JSON.parse(doc.data()?.output));
         isFetched = true;
       }
     );
@@ -119,13 +120,15 @@ function RichDocumentEditor({ params }) {
     }
   };
   return (
-    <div className="flex items-center ml-8">
+    <div className=" ">
       <div
         id="editorjs"
-        className="w-[70%] bg-rose-50 dark:bg-secondary "
+        className="w-[70%] bg-white dark:bg-neutral-700 ml-2"
       ></div>
-      {/* <div className='fixed bottom-10 md:ml-80 left-0 z-10'>
-        <GenerateAITemplate setGenerateAIOutput={(output)=>editor?.render(output)} />
+      {/* <div className="fixed bottom-10 md:ml-80 left-0 z-10">
+        <GenerateAITemplate
+          setGenerateAIOutput={(output) => editor?.render(output)}
+        />
       </div> */}
     </div>
   );
