@@ -1,14 +1,20 @@
-import React from "react";
-import Header from "../../_components/Header";
-import WorkspaceList from "../dashboard/_components/WorkspaceList";
+"use client"
+
+import React, { useEffect } from 'react'
+import Header from './_components/Header'
+import WorkspaceList from './_components/WorkspaceList'
+
 
 function Dashboard() {
+  
   return (
     <div>
-      <Header />
-      <WorkspaceList />
+     
+      <Header/>
+
+      <WorkspaceList/>
     </div>
-  );
+  )
 }
 
-export default Dashboard;
+export default Dashboard

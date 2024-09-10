@@ -1,26 +1,27 @@
-"use client";
+"use client"
+import React, { useEffect } from 'react'
+import SideNav from '../../_components/SideNav'
+import DocumentEditorSection from '../../_components/DocumentEditorSection'
+import { Room } from '@/app/Room'
 
-import React, { useEffect } from "react";
-import SideNav from "../../_components/SideNav";
-import DocumentEditorSection from "../../_components/DocumentEditorSection";
-import { Room } from "../../../../Room";
+function WorkspaceDocument({params}) {
 
-function WorkspaceDocument({ params }) {
+
   return (
+    <Room params={params}>
     <div>
-      <Room params={params}>
-        {/* SideNav */}
-        <div>
+      {/* Side Nav  */}
+      <div className=''>
           <SideNav params={params} />
-        </div>
+      </div>
 
-        {/* Document */}
-        <div className="md:ml-72">
-          <DocumentEditorSection params={params} />
-        </div>
-      </Room>
+      {/* Document  */}
+      <div className='md:ml-72'>
+        <DocumentEditorSection params={params} />
+      </div>
     </div>
-  );
+    </Room>
+  )
 }
 
-export default WorkspaceDocument;
+export default WorkspaceDocument
